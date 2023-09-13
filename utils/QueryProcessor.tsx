@@ -7,5 +7,12 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
+  if (query.toLowerCase().includes("yejunk")) {
+    return (
+      "Ariel Kwak's Andrew ID"
+    );
+  }
+
+
   return "";
 }
