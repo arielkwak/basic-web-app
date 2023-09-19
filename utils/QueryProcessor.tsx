@@ -47,5 +47,29 @@ export default function QueryProcessor(query: string): string {
     }
   }
 
+  // which of the following is the largest 
+  if (query.toLowerCase().includes("multiply")){
+    const queryString = query.toLowerCase();
+    const numbers = queryString.match(/\d+/g);
+
+    if (numbers && numbers.length >= 3) {
+      const num1 = parseInt(numbers[0]);
+      const num2 = parseInt(numbers[1]);
+      const num3 = parseInt(numbers[2]); 
+
+      if(num1>num2 && num1 > num3){
+        return ""+num1;
+      } else if (num2 > num3 && num2 > num1){
+        return ""+num2;
+      } else if (num3 > num1 && num3>num2){
+        return ""+num3;
+      }
+
+    } else {
+      // Handle the case where two numbers couldn't be extracted.
+      return "Could not extract two numbers from the query.";
+    }
+  }
+
   return "";
 }
