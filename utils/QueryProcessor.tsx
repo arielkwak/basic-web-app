@@ -71,5 +71,20 @@ export default function QueryProcessor(query: string): string {
     }
   }
 
+  // minus
+  if (query.toLowerCase().includes("minus")){
+    const queryString = query.toLowerCase();
+    const numbers = queryString.match(/\d+/g);
+
+    if (numbers && numbers.length >= 2) {
+      const num1 = parseInt(numbers[0]);
+      const num2 = parseInt(numbers[1]);
+      return "" + (num1 - num2);
+    } else {
+      // Handle the case where two numbers couldn't be extracted.
+      return "Could not extract two numbers from the query.";
+    }
+  }
+
   return "";
 }
