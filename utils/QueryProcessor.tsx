@@ -33,7 +33,7 @@ export default function QueryProcessor(query: string): string {
     }
   }
 
-  if (query.toLowerCase().includes("multiply")){
+  if (query.toLowerCase().includes("multiplied")){
     const queryString = query.toLowerCase();
     const numbers = queryString.match(/\d+/g);
 
@@ -48,7 +48,7 @@ export default function QueryProcessor(query: string): string {
   }
 
   // which of the following is the largest 
-  if (query.toLowerCase().includes("multiplied")){
+  if (query.toLowerCase().includes("largest")){
     const queryString = query.toLowerCase();
     const numbers = queryString.match(/\d+/g);
 
